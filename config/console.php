@@ -25,7 +25,20 @@ $config = [
             ],
         ],
         'db' => $db,
+        // for RBAC & usuario extension
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            // uncomment if you want to cache RBAC items hierarchy
+            // 'cache' => 'cache',
+        ],
+
+    ], //components
+
+    // This allows to use commands: `user/create`, `user/confirm`...
+    'modules' => [
+        'user' =>  Da\User\Module::class,
     ],
+
     'params' => $params,
     /*
     'controllerMap' => [
