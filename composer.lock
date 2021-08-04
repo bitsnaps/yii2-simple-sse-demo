@@ -4,14 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91ebe759c8dc03d792e5524b7edbe0b4",
+    "content-hash": "dd208cb61601cc8139f6040f51c64839",
     "packages": [
+        {
+            "name": "automattic/woocommerce",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/woocommerce/wc-api-php.git",
+                "reference": "a71aa95cc3de3f1d68c6303525d03c0557a96137"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/woocommerce/wc-api-php/zipball/a71aa95cc3de3f1d68c6303525d03c0557a96137",
+                "reference": "a71aa95cc3de3f1d68c6303525d03c0557a96137",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">= 5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Automattic\\WooCommerce\\": [
+                        "src/WooCommerce"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Claudio Sanches",
+                    "email": "claudio.sanches@automattic.com"
+                }
+            ],
+            "description": "A PHP wrapper for the WooCommerce REST API",
+            "keywords": [
+                "api",
+                "woocommerce"
+            ],
+            "support": {
+                "issues": "https://github.com/woocommerce/wc-api-php/issues",
+                "source": "https://github.com/woocommerce/wc-api-php/tree/master"
+            },
+            "time": "2019-01-16T20:28:40+00:00"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
+                "url": "git@github.com:twbs/bootstrap.git",
                 "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
             },
             "dist": {
@@ -53,7 +105,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -71,7 +123,7 @@
             "version": "v1.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bestiejs/punycode.js.git",
+                "url": "git@github.com:bestiejs/punycode.js.git",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
             },
             "dist": {
@@ -219,6 +271,120 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/master"
             },
             "time": "2020-06-29T00:56:53+00:00"
+        },
+        {
+            "name": "hieu-le/wordpress-xmlrpc-client",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/letrunghieu/wordpress-xmlrpc-client.git",
+                "reference": "4eced3821b41ba21ce314569b79d7302d65f4b16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/letrunghieu/wordpress-xmlrpc-client/zipball/4eced3821b41ba21ce314569b79d7302d65f4b16",
+                "reference": "4eced3821b41ba21ce314569b79d7302d65f4b16",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xmlrpc": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "illuminate/support": "~4.0",
+                "php-vcr/php-vcr": "^1.0",
+                "php-vcr/phpunit-testlistener-vcr": "*",
+                "phpunit/phpunit": "*",
+                "symfony/yaml": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HieuLe\\WordpressXmlrpcClient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hieu Le",
+                    "email": "letrunghieu.cse09@gmail.com",
+                    "homepage": "http://www.hieule.info"
+                }
+            ],
+            "description": "A PHP client for Wordpress websites that closely implement the XML-RPC WordPress API with full test suite built in",
+            "keywords": [
+                "api",
+                "client",
+                "remote",
+                "wordpress",
+                "xmlrpc"
+            ],
+            "support": {
+                "issues": "https://github.com/letrunghieu/wordpress-xmlrpc-client/issues",
+                "source": "https://github.com/letrunghieu/wordpress-xmlrpc-client/tree/2.6.0"
+            },
+            "time": "2020-12-03T14:13:29+00:00"
+        },
+        {
+            "name": "monitorbacklinks/yii2-wordpress",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/monitorbacklinks/yii2-wordpress.git",
+                "reference": "d7dbd7b85130f2237f645f4fc90564a337aa85e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monitorbacklinks/yii2-wordpress/zipball/d7dbd7b85130f2237f645f4fc90564a337aa85e0",
+                "reference": "d7dbd7b85130f2237f645f4fc90564a337aa85e0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xmlrpc": "*",
+                "hieu-le/wordpress-xmlrpc-client": "~2.0",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "codeception/codeception": "~2.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "monitorbacklinks\\yii2wp\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Koptiev",
+                    "email": "ivan@monitorbacklinks.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 component for integration with Wordpress CMS via XML-RPC API",
+            "homepage": "http://monitorbacklinks.github.io/yii2-wordpress/",
+            "keywords": [
+                "integration",
+                "wordpress",
+                "wp",
+                "xml-rpc",
+                "xmlrpc",
+                "yii",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/monitorbacklinks/yii2-wordpress/issues",
+                "source": "https://github.com/monitorbacklinks/yii2-wordpress"
+            },
+            "time": "2014-10-20T08:12:09+00:00"
         },
         {
             "name": "odannyc/yii2-sse",
@@ -3855,7 +4021,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=5.6.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

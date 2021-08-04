@@ -53,6 +53,14 @@ $config = [
         */
         'sse' => [
           'class' => \odannyc\Yii2SSE\LibSSE::class
+        ],
+
+        // Wordpress Blog
+        'blog' => [
+            'class' => '\monitorbacklinks\yii2wp\Wordpress',
+            'endpoint' => 'http://127.0.0.1/woocommerce/xmlrpc.php',
+            'username' => 'admin',
+            'password' => 'master'
         ]
     ], // components
     'params' => $params,

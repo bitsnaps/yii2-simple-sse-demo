@@ -5,6 +5,30 @@ use yii\helpers\Url;
 
 $this->title = 'My Yii Application';
 ?>
+<div class="page-header">
+
+<pre>
+  <?php
+    //By default, the API provides information about all available endpoints
+    // $results = $woocommerce->get('');
+    // $results = $woocommerce->get('products'); // ask for products
+    // $results = $woocommerce->get('products/115'); // ask for a product
+    // $results = $woocommerce->get('orders', ['per_page' => 5, 'page'=> 2]); // ask for orders
+    // $results = $woocommerce->get('orders/355'); // ask for an order
+    // $results = $woocommerce->get('customers'); // ask for customers
+    var_dump($results);
+  ?>
+
+</pre>
+
+<p>Post Created:</p>
+<pre><?php var_dump($postID); ?></pre>
+
+<p>Posts:</p>
+
+<pre><?php var_dump($posts); ?></pre>
+
+</div>
 <div class="site-index">
 
     <div class="jumbotron">
