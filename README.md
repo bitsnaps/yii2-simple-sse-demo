@@ -1,3 +1,3 @@
-# Yii2 Simple SSE Demo
+# Yii2 barcode genrator (example)
 
-This project is to demostrate a simple example of Server Side Event php implementation usage on Yii2, based on [Yii2 SEE](https://github.com/odannyc/yii2-sse) extension.
+This project is to demostrate a simple example of using [Yii2 SEE](https://github.com/Vilochane/yii2-barcode-generator-8-types) extension.

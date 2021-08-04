@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\sse\MessageEventHandler;
+use kartik\mpdf\Pdf;
 
 class SiteController extends Controller
 {
@@ -63,26 +64,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
-    }
-
-    /**
-    * Create a SSE
-    */
-    public function actionSse()
-    {
-      $sse = Yii::$app->sse;
-
-      // Optional settings
-    	$sse->exec_limit = 10; //the execution time of the loop in seconds. Default: 600. Set to 0 to allow the script to run as long as possible.
-    	$sse->sleep_time = 1; //The time to sleep after the data has been sent in seconds. Default: 0.5.
-    	$sse->client_reconnect = 10; //the time for the client to reconnect after the connection has lost in seconds. Default: 1.
-    	$sse->use_chunked_encoding = true; //Use chunked encoding. Some server may get problems with this and it defaults to false
-    	$sse->keep_alive_time = 600; //The interval of sending a signal to keep the connection alive. Default: 300 seconds.
-    	$sse->allow_cors = true; //Allow cross-domain access? Default: false. If you want others to access this must set to true.
-
-      $sse->addEventListener('message', new MessageEventHandler());
-      $sse->start();
-      // return $sse->createResponse();
     }
 
     /**
@@ -146,4 +127,39 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionReport() {
+        // get your HTML raw content without any layouts or scripts
+        $content = $this->renderPartial('_reportView');
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_CORE,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/src/assets/kv-mpdf-bootstrap.min.css',
+            // any css to be embedded if required
+            'cssInline' => '.kv-heading-1{font-size:18px}',
+             // set mPDF properties on the fly
+            'options' => ['title' => 'Krajee Report Title'],
+             // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader'=>['Krajee Report Header'],
+                'SetFooter'=>['{PAGENO}'],
+            ]
+        ]);
+
+        // return the pdf output as per the destination setting
+        return $pdf->render();
+    }
+
 }

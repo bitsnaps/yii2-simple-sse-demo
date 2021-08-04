@@ -2,17 +2,28 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
+use \barcode\barcode\BarcodeGenerator;
 
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
+
+  <div id="showBarcode"></div>
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p><a class="btn btn-lg btn-success" href="<?= Url::to(['site/sse']) ?>">SSE</a></p>
+        <p><a class="btn btn-lg btn-success" href="<?= Url::to(['site/index']) ?>">Home</a></p>
+
+
+        <?php echo BarcodeGenerator::widget([
+          'elementId'=> 'showBarcode', /* div or canvas id*/
+          'value'=> '4994334051462', /* (this has to be a valid code for ean13...) value for EAN 13 be careful to set right values for each barcode type */
+          'type'=>'datamatrix',/*supported types  ean8, ean13, upc, std25, int25, code11, code39, code93, code128, codabar, msi, datamatrix*/
+          'rectangular' => false, // default: false
+        ]); ?>
     </div>
 
     <div class="body-content">

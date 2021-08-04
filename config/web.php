@@ -51,9 +51,6 @@ $config = [
             ],
         ],
         */
-        'sse' => [
-          'class' => \odannyc\Yii2SSE\LibSSE::class
-        ]
     ], // components
     'params' => $params,
 ];
